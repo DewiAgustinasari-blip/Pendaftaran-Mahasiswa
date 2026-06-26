@@ -1,0 +1,257 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,#0f4c81,#2e86c1);
+    padding:30px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.banner{
+    background:linear-gradient(135deg,#0f4c81,#2e86c1);
+    color:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+.banner h2{
+    font-size:30px;
+}
+
+.banner h3{
+    margin-top:10px;
+    font-weight:normal;
+}
+
+.section-title{
+    background:#0f4c81;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.row{
+    display:flex;
+    gap:30px;
+}
+
+.left-form{
+    flex:3;
+}
+
+.right-photo{
+    flex:1;
+    text-align:center;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+input[type=text],
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+input[type=text]:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2e86c1;
+}
+
+textarea{
+    height:120px;
+}
+
+.error{
+    display:block;
+    color:red;
+    font-size:13px;
+    margin-top:4px;
+}
+
+#previewFoto {
+    width: 135px;       /* Lebar pas foto standar */
+    height: 165px;      /* Tinggi pas foto standar */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Lengkungan border 8px agar seragam */
+    object-fit: cover;
+    background-color: #f8fbff; /* Menggunakan warna biru soft bawaan `.card` kamu */
+    display: block;
+    padding: 4px;
+}
+
+.foto-text{
+    margin-top:10px;
+    color:#666;
+}
+
+.button-group{
+    margin-top:20px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+button[type=submit]{
+    background:#0f4c81;
+    color:white;
+}
+
+button[type=reset]{
+    background:#777;
+    color:white;
+}
+
+#btnEdit{
+    margin-top:20px;
+    background:#0f4c81;
+    color:white;
+}
+
+.card{
+    margin-top:20px;
+    background:#f8fbff;
+    border-left:6px solid #0f4c81;
+    border-radius:12px;
+    padding:20px;
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#0f4c81;
+}
+
+.card img{
+    width:180px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.hasil-container{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+}
+
+.hasil-foto{
+    flex:1;
+}
+
+.hasil-foto img{
+    width:180px;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    border:3px solid #0f4c81;
+}
+
+.hasil-data{
+    flex:3;
+}
+
+.hasil-data h2{
+    color:#0f4c81;
+    margin-bottom:15px;
+}
+
+.hasil-data p{
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+
+/* Menghilangkan duplikasi gaya bawaan plugin agar seragam dengan .error bikinanmu */
+label.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+    font-weight: normal;
+}
+
+/* Otomatis memberikan border merah pada inputan yang gagal divalidasi */
+input.error, select.error, textarea.error {
+    border: 1px solid red !important;
+    background-color: #fff5f5;
+}
+
+/* --- TAMPILAN BARU UNTUK INPUT FOTO SEJAJAR --- */
+
+.foto-wrapper {
+    display: flex;
+    gap: 20px;          /* Jarak space antara kotak kiri dan kanan */
+    align-items: d-start; 
+    width: 100%;        /* Memaksa lebar mengikuti form utama */
+}
+
+/* Sisi Kiri: Menyesuaikan dengan tinggi kotak preview agar seimbang */
+.foto-input-box {
+    flex: 1;            /* Membagi ruang sama rata dengan kanan */
+    border: 1px solid #ccc; /* Menggunakan warna abu-abu #ccc agar senada dengan inputanmu */
+    border-radius: 8px; /* Lengkungan border 8px agar sama dengan input[type=text] milikmu */
+    padding: 20px;
+    background-color: #fff;
+    min-height: 165px;  /* Menyamakan tinggi minimal dengan kotak preview */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Membuat teks dan tombol pilih file pas di tengah secara vertikal */
+}
+
+.foto-label-text {
+    display: block;
+    font-weight: 600;   /* Menggunakan ketebalan 600 agar sama dengan label bawaanmu */
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Mengatur input file asli di dalam kotak */
+.foto-input-box input[type=file] {
+    width: 100%;
+}
+
+/* Sisi Kanan: Kotak Preview pas foto */
+.foto-preview-box {
+    display: flex;
+    justify-content: flex-end; /* Memastikan foto mepet di sisi kanan luar agar presisi */
+}
+
+
+
